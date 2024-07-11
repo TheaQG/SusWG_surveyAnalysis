@@ -1,3 +1,6 @@
+# Ignore welcome-to-docker folder
+welcome-to-docker/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
