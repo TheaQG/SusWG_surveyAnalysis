@@ -139,6 +139,7 @@ international_car = international_car.dropna(how='all', axis=0).reset_index(drop
 # Number of cars
 num_cars = 5
 
+
 # Reshape the dataframe
 rows = []
 for i in range(1, num_cars + 1):
