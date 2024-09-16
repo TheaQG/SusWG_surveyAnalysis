@@ -2,6 +2,21 @@
 
 This is the repository for emission invetoring of the Department of Environmental Science business travels.
 
+### Overview of the repository
+- csv: Contains the data (mainly .csv files) used in the emission inventory
+- figures: Contains code and figures generated in the emission inventory (so far only the map of the travels)
+- create_destination_files.py: Script for creating the destination files ((lat, lon)coordinates for locations in survey) for the national_travels_emissions.py and international_travels_emissions.py scripts.
+- international_travels_emissions.py: Script for calculating the emissions from international travels
+- national_travels_emissions.py: Script for calculating the emissions from national travels
+- SurveyAnalysis_BusinessTravel.py: ???
+- SurveyAnalysis_BusinessTravel_maps.py: Script for creating the map of the travels
+- suswg_env.yaml: Environment file for setting up the environment for running the scripts
+- utils.py: Utility functions used in the emission inventory (Haversine distance calculation and OSRRM request)
+- README.md: This file
+
+
+
+### Setting up the environment
 To be able to run the national_travels_emissions.py and international_travels_emissions.py scripts, you need to set up a osrm (Open Source Routing Machine) backend. The scripts use the OSRM backend to calculate the distance between two points. The distance is used to calculate the emissions from the travels.
 
 1. Install Docker (e.g. from https://www.docker.com/products/docker-desktop) to avoid the need to install the osrm backend on your local machine.
@@ -17,12 +32,13 @@ To be able to run the national_travels_emissions.py and international_travels_em
 
 The scripts should now be able to be executed without any problems. Run them (in an env corresponding to the ´suswg_env.yaml´-file) using ´python national_travels_emissions.py´ and ´python international_travels_emissions.py´.
 
-Work in progress:
+### Work in progress:
 - Cleaning up the code: Simplify code (especially in international_travels_emissions.py and national_travels_emissions.py) by looping through transportation types
 - Make more general: Use the knowledge from this script to develop a general emission inventory script for business travels (e.g. input: excel file with travels, output: excel file with emissions)
 - Make more advanced emissions calculations (emissions from planes different depending on distance, emissions from cars different depending on fuel type, etc.)
 - Make the script more user-friendly: Add a GUI for inputting the data, add a GUI for selecting the map data, etc.
 - Make OSRM setup easier: Make a script for setting up the OSRM backend
+- Make figures: Make more figures, e.g. emissions per department, emissions per transportation type, etc.
 
 - Add more data: Add more data to the emission inventory, e.g. emissions from food, emissions from electricity, etc.
 

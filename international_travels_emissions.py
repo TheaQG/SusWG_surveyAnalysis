@@ -79,7 +79,7 @@ print(reshaped_df)
 # Add a new column 'Distance' to the dataframe
 reshaped_df['distance'] = 0
 for index, row in reshaped_df.iterrows():
-    distance = get_haversine_distance('Kastrup', row['to'], 'international_destinations.csv')
+    distance = get_haversine_distance('Kastrup', row['to'], 'csv/international_destinations.csv')
     reshaped_df.loc[index, 'distance'] = distance * float(row['times'])
 
 

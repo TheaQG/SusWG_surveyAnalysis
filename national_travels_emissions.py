@@ -93,7 +93,7 @@ reshaped_df = reshaped_df.iloc[:, 1:]
 # Use osrm to calculate the distance between the locations
 # Loop through the dataframe, compute the distance between locations, and calculate the emissions
 # The lat_lon_file should contain the latitudes and longitudes of the all locations.
-lat_lon_file = 'national_destinations.csv'
+lat_lon_file = 'csv/national_destinations.csv'
 
 # Add a new column 'Distance' to the dataframe
 reshaped_df['distance'] = 0
