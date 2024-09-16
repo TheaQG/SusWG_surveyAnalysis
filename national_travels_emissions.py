@@ -1,5 +1,8 @@
 '''
     Script to calculate the emissions of business travels in Denmark (not including Greenland and the Faroe Islands)
+
+    !!! Need to check with "https://envs.au.dk/fileadmin/envs/Emission_inventories/Emission_factors/Emf_internet__Ex-GHG-main.htm!"
+        for more accurate emission factors !!!
 '''
 
 import pandas as pd
