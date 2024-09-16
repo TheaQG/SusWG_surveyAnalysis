@@ -5,8 +5,22 @@ This script is used to calculate the emissions from international business trave
 import pandas as pd
 from utils import get_haversine_distance
 
+
+# Fly - International + RFI (person.km) Scope 3. kg CO2e per person km
+emission_factor_plane_per_km = 0.197423783892617
+# Car - International + RFI (person.km) Scope 3. kg CO2e per person km
+emission_factor_car_per_km = 0.243
+# Train - International + RFI (person.km) Scope 3. kg CO2e per person km
+emission_factor_train_per_km = 0.041
+# Bus - International + RFI (person.km) Scope 3. kg CO2e per person km
+emission_factor_bus_per_km = 0.027
+
+
+
+
+
 # Load .xlsx file
-FILE_PATH = '/Users/au728490/Documents/PhD_AU/Python_Scripts/SusWG_surveyAnalysis/csv/cleaned_BusinessTravels.xlsx'
+FILE_PATH = 'csv/cleaned_BusinessTravels.xlsx'
 
 international_travel = pd.read_excel(FILE_PATH, sheet_name='Abroad_BusinessTravels_clean')
 
@@ -69,8 +83,7 @@ for index, row in reshaped_df.iterrows():
     reshaped_df.loc[index, 'distance'] = distance * float(row['times'])
 
 
-# Fly - International + RFI (person.km) Scope 3. kg CO2e per person km
-emission_factor_plane_per_km = 0.197423783892617
+
 
 # Add a new column 'Emissions', which is the distance travelled multiplied with emission factor
 reshaped_df['emissions'] = reshaped_df['distance'] * emission_factor_plane_per_km

@@ -13,8 +13,11 @@ def get_osrm_distance(from_location:str, to_location:str, lat_lon_file:str, via_
     # Get the latitudes and longitudes of the from and to locations (and via if it exists)
     from_lat_lon = lat_lon[lat_lon['Destination'] == from_location]
     to_lat_lon = lat_lon[lat_lon['Destination'] == to_location]
+    # If via location is not none, get the latitudes and longitudes
     if via_location is not None:
         via_lat_lon = lat_lon[lat_lon['Destination'] == via_location]
+    else:
+        via_lat_lon = pd.DataFrame()
 
     # Check if the locations exist
     if from_lat_lon.empty or to_lat_lon.empty:
@@ -26,11 +29,15 @@ def get_osrm_distance(from_location:str, to_location:str, lat_lon_file:str, via_
     from_lon = from_lat_lon['Longitude'].values[0]
     to_lat = to_lat_lon['Latitude'].values[0]
     to_lon = to_lat_lon['Longitude'].values[0]
-    if via_location is not None:
+
+    # If via location is not empty, get the latitudes and longitudes
+    if not via_lat_lon.empty:
         via_lat = via_lat_lon['Latitude'].values[0]
         via_lon = via_lat_lon['Longitude'].values[0]
     
-    if via_location is not None:
+
+    
+    if not via_lat_lon.empty:
         url = f"http://localhost:5000/route/v1/driving/{from_lon},{from_lat};{via_lon},{via_lat};{to_lon},{to_lat}?overview=false"
     else:
         url = f"http://localhost:5000/route/v1/driving/{from_lon},{from_lat};{to_lon},{to_lat}?overview=false"

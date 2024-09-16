@@ -1,3 +1,5 @@
+# Ignore files startingwith 'denmark-'
+denmark-*
 # Ignore welcome-to-docker folder
 welcome-to-docker/
 
