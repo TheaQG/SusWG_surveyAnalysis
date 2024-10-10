@@ -9,8 +9,8 @@ from shapely.geometry import Point
 from mpl_toolkits.basemap import Basemap
 
 # Read the .csv files with destination coordinates
-national_destinations = pd.read_csv('national_destinations.csv')
-international_destinations = pd.read_csv('international_destinations.csv')
+national_destinations = pd.read_csv('csv/national_destinations.csv')
+international_destinations = pd.read_csv('csv/international_destinations.csv')
 
 
 
@@ -35,7 +35,7 @@ for index, row in national_destinations.iterrows():
     # Add city labels
     if row['Destination'] in plot_city_labels:
         m.plot(x, y, 'o', markersize=3, color='navy')
-        axs[0].text(x, y+3500, row['Destination'], fontsize=8, ha='center', va='bottom', color='navy')
+        axs[0].text(x, y+3500, row['Destination'], fontsize=12, ha='center', va='bottom', color='navy')
     else:
         m.plot(x, y, 'o', markersize=2, color='navy', alpha=0.5)
     
@@ -62,7 +62,7 @@ for index, row in national_destinations.iterrows():
 
         if row['Destination'] in plot_city_labels:
             m2.plot(x2, y2, 'o', markersize=3, color='navy')
-            axs[1].text(x2, y2+2000, row['Destination'], fontsize=8, ha='center', va='bottom', color='navy')
+            axs[1].text(x2, y2+2000, row['Destination'], fontsize=12, ha='center', va='bottom', color='navy')
         else:
             m2.plot(x2, y2, 'o', markersize=2, color='navy', alpha=0.5)
         
@@ -96,9 +96,9 @@ for index, row in international_destinations.iterrows():
         if row['Destination'] in plot_city_labels:
             m3.plot(x3, y3, 'o', markersize=3, color='navy')
             if row['Destination'] in ['Grenoble', 'Venedig', 'København', 'Stockholm', 'Innsbruck']:
-                ax.text(x3, y3-10000, row['Destination'], fontsize=8, ha='center', va='top', color='navy')
+                ax.text(x3, y3-10000, row['Destination'], fontsize=12, ha='center', va='top', color='navy')
             else:
-                ax.text(x3, y3+10000, row['Destination'], fontsize=8, ha='center', va='bottom', color='navy')
+                ax.text(x3, y3+10000, row['Destination'], fontsize=12, ha='center', va='bottom', color='navy')
         else:
             m3.plot(x3, y3, 'o', markersize=2, color='navy', alpha=0.5)
         
@@ -121,21 +121,22 @@ m4.fillcontinents(color='ForestGreen', lake_color='lightcyan', alpha=0.35)
 m4.drawcoastlines(linewidth=0.1)
 m4.drawcountries(linewidth=0.2)
 
-plot_city_labels = ['San Francisco', 'Banff', 'Athen', 'Florianopolis', 'Australine', 'Shanghai',
+plot_city_labels = ['San Francisco', 'Banff', 'Athen', 'Florianopolis', 'Australien', 'Shanghai',
                     'Station Nord', 'Nuuk', 'Heraklion', 'Cyprus', 'Marrakesh', 'Faro', 'Berlin'
                     'Paris', 'Toulouse', 'København', 'Thorshavn', 'Oslo', 'Oulu', 'Edinburgh', 
-                    'Venedig', 'longyearbyen']
+                    'Venedig', 'Longyearbyen']
 
 # Plot each city (within Sjælland) on the map
 for index, row in international_destinations.iterrows():
     x4, y4 = m4(row['Longitude'], row['Latitude'])
+    print(row['Destination'])
 
     if row['Destination'] in plot_city_labels:
         m4.plot(x4, y4, 'o', markersize=3, color='navy')
         if row['Destination'] in ['København', 'Venedig', 'Marrakesh', 'Faro']:
-            ax.text(x4, y4-50000, row['Destination'], fontsize=9, ha='center', va='top', color='navy')
+            ax.text(x4, y4-50000, row['Destination'], fontsize=12, ha='center', va='top', color='navy')
         else:
-            ax.text(x4, y4+50000, row['Destination'], fontsize=9, ha='center', va='bottom', color='navy')
+            ax.text(x4, y4+50000, row['Destination'], fontsize=12, ha='center', va='bottom', color='navy')
     else:
         m4.plot(x4, y4, 'o', markersize=2, color='navy', alpha=0.5)
 

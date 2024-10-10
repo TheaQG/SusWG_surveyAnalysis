@@ -1,8 +1,10 @@
 # Ignore files startingwith 'denmark-'
-denmark-*
+osm_*
 # Ignore welcome-to-docker folder
 welcome-to-docker/
 
+# Ignore .ds_store files
+.DS_Store
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

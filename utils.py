@@ -8,6 +8,8 @@ def get_osrm_distance(from_location:str, to_location:str, lat_lon_file:str, via_
         Via is optional.
         The lat_lon_file should contain the latitudes and longitudes of the all locations.
     '''
+    
+
     # Read the file with the latitudes and longitudes
     lat_lon = pd.read_csv(lat_lon_file)
     # Get the latitudes and longitudes of the from and to locations (and via if it exists)
@@ -85,12 +87,12 @@ def get_haversine_distance(from_location, to_location, lat_lon_file):
     return distance
 
 
-# Test the function
-from_location = 'Aabybro'
-to_location = 'Esbjerg'
-via_location = 'Aalborg'
-lat_lon_file = 'national_destinations.csv'
+# # Test the function
+# from_location = 'Aabybro'
+# to_location = 'Esbjerg'
+# via_location = 'Aalborg'
+# lat_lon_file = 'csv/national_destinations.csv'
 
-distance = get_haversine_distance(from_location, to_location, lat_lon_file)
+# distance = get_haversine_distance(from_location, to_location, lat_lon_file)
 
-print(f'Haversine distance: {distance:.2f} km')
+# print(f'Haversine distance: {distance:.2f} km')

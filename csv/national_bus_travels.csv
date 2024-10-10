@@ -1,0 +1,10 @@
+,from,to,via,times,distance,emissions
+0,Roskilde,København,,4.0,142.87079999999997,2.8574159999999997
+1,Roskilde,Risø,,2.0,13.346,0.26692
+2,Roskilde,Silkeborg,Slagelse,2.0,520.62,10.4124
+3,Risø,Helsingør,,2.0,150.1498,3.002996
+4,Roskilde,Helsingør,,4.0,285.7276,5.714552
+5,Aarhus,Aarhus Universitet,,10.0,27.323000000000004,0.5464600000000001
+6,Roskilde,Flakkebjerg,Slagelse,14.0,994.5208,19.890416000000002
+7,Aalborg,Aabybro,,4.0,79.4828,1.589656
+8,Roskilde,DTU Lyngby,København H,20.0,983.8,19.676

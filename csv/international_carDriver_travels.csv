@@ -1,0 +1,4 @@
+,from,to,via,times,electric,petrol,distance_electric,distance_petrol,distance,emissions_electric,emissions_petrol,emissions
+0,Roskilde,Lund,Kastrup,2.0,0,1,0,87.792,87.792,0.0,15.6181968,15.6181968
+1,Roskilde,Ispra,,4.0,0,1,0,605.3788000000001,605.3788000000001,0.0,107.69688852000002,107.69688852000002
+2,Risø,Lyon,Tyskland,2.0,0,1,0,923.2504,923.2504,0.0,164.24624616,164.24624616

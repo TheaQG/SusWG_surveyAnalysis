@@ -6,7 +6,7 @@ import requests
 import pandas as pd
 
 # Load .xlsx file
-FILE_PATH = '/Users/au728490/Documents/PhD_AU/Python_Scripts/SusWG_surveyAnalysis/csv/cleaned_BusinessTravels.xlsx'
+FILE_PATH = 'csv/cleaned_BusinessTravels.xlsx'
 
 national_travel = pd.read_excel(FILE_PATH, sheet_name='DK_BusinessTravels_clean')
 international_travel = pd.read_excel(FILE_PATH, sheet_name='Abroad_BusinessTravels_clean')
